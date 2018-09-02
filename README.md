@@ -12,10 +12,11 @@ python 2.x, chainer 4.3.1, numpy, matplotlib, and [binarized mnist dataset](http
 
 ## examples
 
-### 1-D function regression
-Train an NP on a single small data set.
+### Train an NP on a single small data set.
+
+![](fig/1d.gif)
 
 
+### Train an NP on repeated draws from the GP.
 
-### 2-D function regression
-Train an NP on repeated draws from the GP.
+![](fig/gp.gif)
