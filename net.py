@@ -10,7 +10,7 @@ from chainer import cuda
 
 class NeuralProcesses(chainer.Chain):
     """Neural Processes"""
-    def __init__(self, n_x, n_y, n_h, n_r, n_z):
+    def __init__(self, n_x, n_y, n_h, n_r, n_z, activ):
         super(NeuralProcesses, self).__init__()
 
         # parameters
@@ -19,6 +19,7 @@ class NeuralProcesses(chainer.Chain):
         self.n_h = n_h
         self.n_r = n_r
         self.n_z = n_z
+        self.activ = activ
 
         with self.init_scope():
             # encoder
@@ -68,7 +69,11 @@ class NeuralProcesses(chainer.Chain):
 
         # infer latent represetation from input
         input = F.concat((xs,ys),axis=1)
-        h = F.sigmoid(self.le1(input))
+        if self.activ == 'relu':
+            h = F.relu(self.le1(input))
+        elif self.activ == 'sigmoid':
+            h = F.sigmoid(self.le1(input))
+
         h = self.le2(h)
 
         return h
@@ -87,7 +92,10 @@ class NeuralProcesses(chainer.Chain):
     def decoder(self, zs, x_star):
         # predict distribution
         input = F.concat((x_star,zs),axis=1)
-        h = F.sigmoid(self.ld1(input))
+        if self.activ == 'relu':
+            h = F.relu(self.ld1(input))
+        elif self.activ == 'sigmoid':
+            h = F.sigmoid(self.ld1(input))
         ys_mu = self.ld2_mu(h)
         ys_ln_var = self.ld2_ln_var(h)
 
