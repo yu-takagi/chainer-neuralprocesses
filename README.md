@@ -14,9 +14,9 @@ python 2.x, chainer 4.3.1, numpy, matplotlib, and [binarized mnist dataset](http
 
 ### Train an NP on a single small data set.
 
-![](fig/1d.gif)
+![1d](./fig/1d.png)
 
 
 ### Train an NP on repeated draws from the GP.
 
-![](fig/gp.gif)
+![](fig/gp.png)
