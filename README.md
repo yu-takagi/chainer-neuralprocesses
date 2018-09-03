@@ -1,5 +1,5 @@
 # Neural Processes implemented with Chainer
-Implemenation of [Neural Processes](https://arxiv.org/pdf/1807.01622) with [Chainer](https://chainer.org/).
+Implemenation of [Neural Processes](https://arxiv.org/pdf/1807.01622) (NPs) introduced by Garnelo et al. (DeepMind) with [Chainer](https://chainer.org/). Neural Processes is a class of neural latent variable models, which can be considered as a combination of Gaussian Process (GP) and neural network (NN). Like GPs, NPs define distributions over functions, are capable of rapid adaptation to new observations, and can estimate the uncertainty in their predictions. Like NNs, NPs are computationally efficient during training and evaluation but also learn to adapt their priors to data.
 
 This is the blog post (only in Japanese) about this repository. (now writing...)
 
@@ -19,4 +19,4 @@ python 2.x, chainer 4.3.1, numpy, matplotlib, and [binarized mnist dataset](http
 
 ### Train an NP on repeated draws from the GP.
 
-![](fig/gp.png)
+![gp](./fig/gp.png)
