@@ -8,7 +8,7 @@ The experiments and implementation are inspired by [blog post by Kaspar Märtens
 MIT license. Contributions welcome.
 
 ## Requirements
-python 2.x, chainer 4.3.1, numpy, matplotlib, and [binarized mnist dataset](https://github.com/mgermain/MADE/releases/download/ICML2015/binarized_mnist.npz).
+python 2.x, chainer 4.3.1, numpy, matplotlib
 
 ## examples
 
